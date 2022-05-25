@@ -19,6 +19,15 @@ Requires
 
 The app is configured to work around legal and illegal selling of chatrooms (default location inside [Patochoe's Cyberbar MLO](https://www.gta5-mods.com/maps/mlo-cyber-bar-fivem-sp))
 
+![](https://i.imgur.com/gPnxlzD.png) ![](https://i.imgur.com/NI4VVCR.png) ![](https://i.imgur.com/uLeajg6.jpeg) ![](https://i.imgur.com/vXB2py8.png) ![](https://i.imgur.com/ipXGMHJ.png) ![](https://i.imgur.com/TI6nb37.png) ![](https://i.imgur.com/HbQYjfQ.jpeg) 
+
+###Shows with a hacked phone in pocket
+![](https://i.imgur.com/Ex1M7bP.png)
+![](https://i.imgur.com/E57VpCv.png)
+![](https://i.imgur.com/tGKhQgj.png)
+![](https://i.imgur.com/qKDQxTW.png)
+
+
 # License
 
     QBCore Framework
@@ -53,7 +62,6 @@ The app is configured to work around legal and illegal selling of chatrooms (def
 
 ## Screenshots
 ![Home](https://cdn.discordapp.com/attachments/921675245360922625/921675439783673897/home.jpg)
-![Discordia] - (https://i.imgur.com/gPnxlzD.png)
 ![Bank](https://cdn.discordapp.com/attachments/921675245360922625/921675441142644756/bank.jpg)
 ![Advert](https://cdn.discordapp.com/attachments/921675245360922625/921675440878415872/advert.jpg)
 ![Mail](https://cdn.discordapp.com/attachments/921675245360922625/921675440278614068/mail.jpg)

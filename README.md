@@ -1,5 +1,23 @@
-# qb-phone
-Advanced Phone for QB-Core Framework :iphone:
+# qb-phone (with discord app)
+This is the standard QB-Phone with the Discordia App from https://github.com/davidxd33/qb-phone
+
+Features
+ - Buying public/private chatrooms.
+ - Chatroom moderation (kick people, delete messages, pin messages)
+ - Search function in rooms.
+ - Option to join chatroom or view. If you join you get push notifications.
+ - Create pin codes for your room, turn it private/public.
+ - Create "hacked" rooms via a hacked phone.
+ - Hacked rooms can only be seen by those with a hacked phone.
+ - Attach pictures to rooms by posting the link (auto embed)
+
+Requires
+- Run the provided discordapp.sql file
+- David's [qb-input](https://github.com/davidxd33/qb-input) to allow for some front end magic.
+- [racingusb](https://github.com/Boom1053/racingusb) - You can remove these edits if you don't want to use this
+- [passhack](https://forum.cfx.re/t/paid-dimboscripts-password-hack/4340860)  - You can use your own hack for the phone dongle in room_creation client lua - Line 152
+
+The app is configured to work around legal and illegal selling of chatrooms (default location inside [Patochoe's Cyberbar MLO](https://www.gta5-mods.com/maps/mlo-cyber-bar-fivem-sp))
 
 # License
 
@@ -20,6 +38,8 @@ Advanced Phone for QB-Core Framework :iphone:
     along with this program.  If not, see <https://www.gnu.org/licenses/>
 
 ## Dependencies
+- [racingusb](https://github.com/Boom1053/racingusb) - You can remove these edits if you don't want to use this
+- [passhack](https://forum.cfx.re/t/paid-dimboscripts-password-hack/4340860)  - You can use your own hack for the phone dongle
 - [qb-core](https://github.com/qbcore-framework/qb-core)
 - [qb-policejob](https://github.com/qbcore-framework/qb-policejob) - MEOS, handcuff check etc. 
 - [qb-crypto](https://github.com/qbcore-framework/qb-crypto) - Crypto currency trading 
@@ -33,6 +53,7 @@ Advanced Phone for QB-Core Framework :iphone:
 
 ## Screenshots
 ![Home](https://cdn.discordapp.com/attachments/921675245360922625/921675439783673897/home.jpg)
+![Discordia] - (https://i.imgur.com/gPnxlzD.png)
 ![Bank](https://cdn.discordapp.com/attachments/921675245360922625/921675441142644756/bank.jpg)
 ![Advert](https://cdn.discordapp.com/attachments/921675245360922625/921675440878415872/advert.jpg)
 ![Mail](https://cdn.discordapp.com/attachments/921675245360922625/921675440278614068/mail.jpg)

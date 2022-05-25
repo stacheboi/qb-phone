@@ -17,7 +17,7 @@ OpenMeosPage = function(page) {
         left: 0+"vh"
     }, 200, function(){
         $(".meos-tabs-footer").animate({
-            bottom: '6vh',
+            bottom: 0,
         }, 200)
         if (CurrentMeosPage == "alerts") {
             $(".meos-recent-alert").removeClass("noodknop");

@@ -196,7 +196,7 @@ $(document).on('click', '#whatsapp-openedchat-send', function(e){
             ChatType: "message",
         }));
         $("#whatsapp-openedchat-message").val("");
-        $(".emojionearea-editor").html("")
+        $("div.emojionearea-editor").data("emojioneArea").setText('');
     } else {
         QB.Phone.Notifications.Add("fab fa-whatsapp", "Whatsapp", "You can't send a empty message!", "#25D366", 1750);
     }

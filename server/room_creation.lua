@@ -44,4 +44,3 @@ QBCore.Functions.CreateCallback('qb-phone:server:hasHackedPhone', function(sourc
 
     cb(isHacked)
 end)
-

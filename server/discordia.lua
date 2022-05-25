@@ -178,7 +178,7 @@ end)
 QBCore.Functions.CreateCallback('qb-phone:server:SearchGroupChatMessages', function(source, cb, roomID, searchTerm) 
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
-    local search = escape_sqli(searchTerm)
+    local search = searchTerm
     local permitted = true
 
     if isOwnerOfRoom(Player.PlayerData.citizenid, roomID) or isMemberOfRoom(Player.PlayerData.citizenid, roomID) then
@@ -255,7 +255,7 @@ RegisterNetEvent('qb-phone:server:SendGroupChatMessage', function(messageData, s
                     TriggerClientEvent('qb-phone:client:notification', src, 'Discordia', 'Your phone is not secure enough to do this.')
                     cb(false)
                 else
-                    local message = escape_sqli(messageData.message)
+                    local message = messageData.message
                     local msg = MySQL.insert.await("INSERT INTO phone_chatroom_messages (room_id, member_id, message, member_name) VALUES (?,?,?,?)", {
                         messageData.room_id,
                         Player.PlayerData.citizenid,
@@ -267,7 +267,7 @@ RegisterNetEvent('qb-phone:server:SendGroupChatMessage', function(messageData, s
                     TriggerEvent("qb-log:server:CreateLog", "phone-chatrooms", "Message Posted (room: ".. messageData.room_id .. ", from: ".. Player.PlayerData.citizenid ..")", "blue", messageData.message)
                 end
             elseif(permitted) then
-                local message = escape_sqli(messageData.message)
+                message = messageData.message
             
                 local msg = MySQL.insert.await("INSERT INTO phone_chatroom_messages (room_id, member_id, message, member_name) VALUES (?,?,?,?)", {
                     messageData.room_id,
@@ -283,7 +283,7 @@ RegisterNetEvent('qb-phone:server:SendGroupChatMessage', function(messageData, s
             TriggerClientEvent('qb-phone:client:notification', src, 'Discordia', 'You must be a member or room owner to send messages.') 
         end
     else
-        local message = escape_sqli(systemMessage.message)
+        local message = systemMessage.message
 
         MySQL.insert("INSERT INTO phone_chatroom_messages (room_id, member_id, message, member_name) VALUES (?,?,?,?)", {
             systemMessage.room_id,

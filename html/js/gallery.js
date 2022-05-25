@@ -3,7 +3,7 @@ function setUpGalleryData(Images){
     if (Images != null) {
         $.each(Images, function(i, image){
             var Element = '<div class="gallery-image"><img src="'+image.image+'" alt="'+image.citizenid+'" class="tumbnail"></div>';
-
+            
             $(".gallery-images").append(Element);
             $("#image-"+i).data('ImageData', image);
         });
@@ -41,12 +41,12 @@ $(document).on('click', '#delete-button', function(e){
                 $.post('https://qb-phone/GetGalleryData', JSON.stringify({}), function(data){
                     setTimeout(()=>{
                             setUpGalleryData(data);
-
+                        
                     },200)
                 });
             },200)
         })
-
+        
     }, 200);
 });
 
@@ -89,7 +89,7 @@ $(document).on('click', '#return-button', function(e){
 $(document).on('click', '#returndetail-button', function(e){
     e.preventDefault();
     returnDetail();
-
+    
 });
 
 function returnDetail(){
@@ -160,3 +160,4 @@ $(document).on('click', '#advert-button', function(e){
         QB.Phone.Notifications.Add("fas fa-ad", "Advertisement", "You can\'t post an empty ad!", "#ff8f1a", 2000);
     }
 });
+

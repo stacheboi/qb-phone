@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.9/purify.min.js" integrity="sha512-VOTFfd4vxPpuE98m9UQTN7j2N2/Blw44lZMhRTnZQqA2gOHq7Yvn5bdIDjjAZuFqqkDtppcjMW+dN3GYbhM94g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
     <title>QBCore Phone</title>
 
     <!-- CSS File's -->
@@ -19,6 +20,7 @@
     <link rel="stylesheet" href="./css/garage.css">
     <link rel="stylesheet" href="./css/mail.css">
     <link rel="stylesheet" href="./css/meos.css">
+    <link rel="stylesheet" href="./css/crypto.css">
     <link rel="stylesheet" href="./css/racing.css">
     <link rel="stylesheet" href="./css/houses.css">
     <link rel="stylesheet" href="./css/lawyers.css">
@@ -27,8 +29,8 @@
     <link rel="stylesheet" href="./css/group-chats.css">
     <link rel="stylesheet" href="./css/gallery.css">
     <link rel="stylesheet" href="./css/camera.css">
-    <!-- CDN's -->
 
+    <!-- CDN's -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.js" integrity="sha512-hkvXFLlESjeYENO4CNi69z3A1puvONQV5Uh+G4TUDayZxSLyic5Kba9hhuiNLbHqdnKNMk2PxXKm0v7KDnWkYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -37,20 +39,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.css" integrity="sha512-vEia6TQGr3FqC6h55/NdU3QSM5XR6HSl5fW71QTKrgeER98LIMGwymBVM867C1XHIkYD9nMTfWK2A0xcodKHNA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> <!-- Bootstrap -->
-    </script><script src="./js/jquery.timeago.js"></script>
+    <script src="./js/jquery.timeago.js"></script>
 </head>
     <body style="background-color: transparent !important";>
         <div id="popup">
             <div class="popupclass">
-                <div id="closePopup"><i class="fa fa-times"></i> Close</div>
+                <div id="close"></div>
             </div>
         </div>
-        <div class="container">
+        <div class="container disableSelection">
             <img src="./img/samsung-s10.png" class="phone-frame">
             <div class="phone-container phone-background">
                 <!-- Phone Header -->
-                <div class="phone-header disableSelection">
-                    <div id="phone-server">DigiDen 6G</div>
+                <div class="phone-header">
+                    <div id="phone-server">TINKLE 5G</div>
                     <div id="phone-time">08:05</div>
                     <div id="phone-icons">
                         <i class="fas fa-signal" id="phone-signal" data-toggle="tooltip" data-placement="left" title="QBCore 5G"></i>
@@ -59,7 +61,7 @@
                 </div>
 
                 <!-- Phone Notification -->
-                <div class="phone-notification-container disableSelection">
+                <div class="phone-notification-container">
                     <div class="notification-icon"></div>
                     <div class="notification-title"></div>
                     <div class="notification-text"></div>
@@ -169,7 +171,7 @@
                             <div class="close-button" id="owned-rooms-list-close"><i class="fa fa-times"></i></div>
                             <h4 class="group-chats-title" style="text-align: center;">YOUR CHANNELS</h4>
                             
-                            <div id="no-owned-rooms-notice">You do not own any rooms. <br>You may purchase some at the internet café!</div>
+                            <div id="no-owned-rooms-notice">You do not own any rooms. <br>You may purchase some at the Digital Den!</div>
 
                             <div id="owned-room-items"></div>
                         </div>
@@ -544,6 +546,61 @@
                         </div>
                     </div>
 
+                    <div class="gallery-app">
+                        <div class="gallery-app-header">
+                            My Gallery
+                        </div>
+                        <div class="gallery-homescreen">
+                            <div class="gallery-images">
+                            </div>
+                        </div>
+
+                        <div class="gallery-detailscreen">
+                            <div class="gallery-details">
+                                <div class="imagedata"><img class="image" id="imagedata" style="width: 100%;" src="" alt=""></div>
+                                <div class="make-post-button">
+                                    <div id="make-post-button">
+                                        POST
+                                    </div>
+                                    <div id="delete-button">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="return-button">
+                                    <div id="return-button">
+                                        RETURN
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-postscreen">
+                            <div class="gallery-details">
+                                <div class="imageTweetData"><textarea id="new-textarea" spellcheck="false" required></textarea></div>
+                                <div class="posts-button">
+                                    <div id="tweet-button">
+                                        <i class="fab fa-twitter fa-lg"></i>
+                                    </div>
+                                    <div id="advert-button">
+                                        <i class="fas fa-ad fa-lg"></i>
+                                    </div>
+                                </div>
+                                <div class="return-button">
+                                    <div id="returndetail-button">
+                                        RETURN
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="camera-app">
+                        <div class="camera-homescreen">
+                            <div class="camera-image">
+                                <div class="loader"></div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="trucker-app">
                         <div class="trucker-header">
                             <span class="trucker-header-name"><span style="font-size: 1vh; color: rgba(255, 255, 255, 0.6);">Welcome</span><br><span id="trucker-name">Jay Yay</span></span>
@@ -571,6 +628,141 @@
                         </div>
 
                         <div class="lawyers-list">
+                        </div>
+                    </div>
+
+                    <div class="crypto-app">
+                        <div class="crypto-header">
+
+                            <img src="./img/qbit.png" class="crypto-header-picture">
+
+                            <div class="crypto-header-values">
+                                <div class="crypto-header-value crypto-portofolio">
+                                    <span>Wallet</span>
+                                    <p>0.2555</p>
+                                </div>
+                                <div class="crypto-header-value crypto-course">
+                                    <span>Value</span>
+                                    <p>$9000</p>
+                                </div>
+                                <div class="crypto-header-value crypto-volume">
+                                    <span>Volume</span>
+                                    <p>$2299.5‬</p>
+                                </div>
+                            </div>
+
+                            <div class="crypto-header-footer">
+                                <div class="crypto-header-footer-item" data-cryptotab="general">
+                                    General
+                                </div>
+                                <div class="crypto-header-footer-item" data-cryptotab="transactions">
+                                    Transactions
+                                </div>
+                                <div class="crypto-header-footer-item" data-cryptotab="course">
+                                    Value
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="crypto-action-page">
+                            <div class="crypto-action-page-buy-crypto">
+
+                                <div class="crypto-action-page-header">Buy Qbit</div>
+
+                                <div class="crypto-action-page-wallet">Wallet: 1.000500 Qbit('s)</div>
+
+                                <i class="crypto-action-page-buy-crypto-input-coins-icon fas fa-coins"></i>
+                                <input type="number" oninput="this.value = Math.abs(this.value)" class="crypto-action-page-buy-crypto-input-coins" required spellcheck="false" placeholder="1.000000" step="0.000001" min="0">
+
+                                <i class="crypto-action-page-buy-crypto-input-money-icon fas fa-dollar-sign"></i>
+                                <!-- <input type="number" oninput="this.value = Math.abs(this.value)" class="crypto-action-page-buy-crypto-input-money" required spellcheck="false" placeholder="1000" step="1.0" min="0"> -->
+                                <div class="crypto-action-page-buy-crypto-input-money">0 Dollars</div>
+
+                                <div class="crypto-action-page-buy-crypto-footer">
+                                    <div class="crypto-action-page-buy-crypto-footer-button" id="buy-crypto">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="crypto-action-page-buy-crypto-footer-button" id="cancel-crypto">
+                                        <i class="fas fa-times-circle"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="crypto-action-page-sell-crypto">
+
+                                <div class="crypto-action-page-header">Sell Qbit</div>
+
+                                <div class="crypto-action-page-wallet">Wallet: 1.000500 Qbit('s)</div>
+
+                                <i class="crypto-action-page-sell-crypto-input-coins-icon fas fa-coins"></i>
+                                <input type="number" oninput="this.value = Math.abs(this.value)" class="crypto-action-page-sell-crypto-input-coins" required spellcheck="false" placeholder="1.000000" step="0.000001" min="0">
+
+                                <i class="crypto-action-page-sell-crypto-input-money-icon fas fa-dollar-sign"></i>
+                                <!-- <input type="number" oninput="this.value = Math.abs(this.value)" class="crypto-action-page-sell-crypto-input-money" required spellcheck="false" placeholder="1000" step="1.0" min="0"> -->
+                                <div class="crypto-action-page-sell-crypto-input-money">0 Dollars</div>
+
+                                <div class="crypto-action-page-buy-crypto-footer">
+                                    <div class="crypto-action-page-buy-crypto-footer-button" id="sell-crypto">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="crypto-action-page-buy-crypto-footer-button" id="cancel-crypto">
+                                        <i class="fas fa-times-circle"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="crypto-action-page-transfer-crypto">
+
+                                <div class="crypto-action-page-header">Transfer Qbit</div>
+
+                                <div class="crypto-action-page-wallet">Wallet: 0 Qbit('s)</div>
+
+                                <i class="crypto-action-page-transfer-crypto-input-coins-icon fas fa-coins"></i>
+                                <input type="number" oninput="this.value = Math.abs(this.value)" class="crypto-action-page-transfer-crypto-input-coins" required spellcheck="false" placeholder="1.000000" step="0.000001" min="0">
+
+                                <i class="crypto-action-page-transfer-crypto-input-money-icon fas fa-address-book"></i>
+                                <input type="texts" class="crypto-action-page-transfer-crypto-input-walletid" required spellcheck="false" placeholder="QB-12345678">
+
+                                <div class="crypto-action-page-buy-crypto-footer">
+                                    <div class="crypto-action-page-buy-crypto-footer-button" id="transfer-crypto">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="crypto-action-page-buy-crypto-footer-button" id="cancel-crypto">
+                                        <i class="fas fa-times-circle"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="crypto-page">
+                            <div class="cryptotab-general">
+                                <div class="cryptotab-general-actions">
+                                    <div class="cryptotab-general-action" data-action="buy-crypto">
+                                        <i class="fas fa-shopping-basket" style="color:green"></i>
+                                        <span class="cryptotab-general-action-title">BUY</span>
+                                        <span class="cryptotab-general-action-description">You can buy crypto here.</span>
+                                    </div>
+                                    <div class="cryptotab-general-action" data-action="sell-crypto">
+                                        <i class="fas fa-hand-holding-usd" style="color:red"></i>
+                                        <span class="cryptotab-general-action-title">SELL</span>
+                                        <span class="cryptotab-general-action-description">You can sell crypto here.</span>
+                                    </div>
+                                    <div class="cryptotab-general-action" data-action="transfer-crypto">
+                                        <i class="fas fa-share" style="color:orange"></i>
+                                        <span class="cryptotab-general-action-title">TRANSFER</span>
+                                        <span class="cryptotab-general-action-description">You can transfer crypto here.</span>
+                                    </div>
+                                </div>
+                                <span class="crypto-walletid">Wallet ID: QB-12345678</span>
+                            </div>
+
+                            <div class="cryptotab-transactions">
+                                <div class="cryptotab-transactions-list">
+                                </div>
+                            </div>
+
+                            <div class="cryptotab-course">
+                                <div class="cryptotab-course-list">
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -654,60 +846,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-app">
-                        <div class="gallery-app-header">
-                            My Gallery
-                        </div>
-                        <div class="gallery-homescreen">
-                            <div class="gallery-images">
-                            </div>
-                        </div>
 
-                        <div class="gallery-detailscreen">
-                            <div class="gallery-details">
-                                <div class="imagedata"><img class="image" id="imagedata" style="width: 100%;" src="" alt=""></div>
-                                <div class="make-post-button">
-                                    <div id="make-post-button">
-                                        POST
-                                    </div>
-                                    <div id="delete-button">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </div>
-                                </div>
-                                <div class="return-button">
-                                    <div id="return-button">
-                                        RETURN
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gallery-postscreen">
-                            <div class="gallery-details">
-                                <div class="imageTweetData"><textarea id="new-textarea" spellcheck="false" required></textarea></div>
-                                <div class="posts-button">
-                                    <div id="tweet-button">
-                                        <i class="fab fa-twitter fa-lg"></i>
-                                    </div>
-                                    <div id="advert-button">
-                                        <i class="fas fa-ad fa-lg"></i>
-                                    </div>
-                                </div>
-                                <div class="return-button">
-                                    <div id="returndetail-button">
-                                        RETURN
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="camera-app">
-                        <div class="camera-homescreen">
-                            <div class="camera-image">
-                                <div class="loader"></div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="advert-app">
                         <div class="advert-home">
                             <div class="advert-header">
@@ -747,7 +886,8 @@
                     <div class="mail-app">
                         <div class="mail-home">
                             <div class="mail-header">
-                                <span id="mail-header-text">Your Mailbox</span>
+                                <span id="mail-header-text">Inbox</span>
+                                <span id="mail-header-mail">jay.nandes@lifeinvader.com</span>
                                 <span id="mail-header-lastsync">Last synchronization 18:31</span>
                             </div>
 
@@ -1020,7 +1160,7 @@
                             <div class="whatsapp-header-footer">
                                 <p>Whatsapp</p>
                                 <i id="whatsapp-search-chats" class="fas fa-search"></i>
-                                <input type="text" id="whatsapp-search-input" placeholder="Contact Name" spellcheck="false">
+                                <input type="text" id="whatsapp-search-input" placeholder="Contactname" spellcheck="false">
                             </div>
                         </div>
                         <div class="whatsapp-chats">
@@ -1088,6 +1228,7 @@
         <script src="./js/garage.js"></script>
         <script src="./js/mail.js"></script>
         <script src="./js/meos.js"></script>
+        <script src="./js/crypto.js"></script>
         <script src="./js/racing.js"></script>
         <script src="./js/houses.js"></script>
         <script src="./js/lawyers.js"></script>

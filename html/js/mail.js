@@ -72,13 +72,15 @@ QB.Phone.Functions.SetupMails = function(Mails) {
     }
     var MessageTime = Hourssssss + ":" + Minutessss;
 
-    $("#mail-header-lastsync").html("Mailbox Updated: "+MessageTime);
+    $("#mail-header-mail").html(QB.Phone.Data.PlayerData.charinfo.firstname+"."+QB.Phone.Data.PlayerData.charinfo.lastname+"@lifeinvader.com");
+    $("#mail-header-lastsync").html("Last synchronized "+MessageTime);
     if (Mails !== null && Mails !== undefined) {
         if (Mails.length > 0) {
             $(".mail-list").html("");
             $.each(Mails, function(i, mail){
-                var date = $.timeago(new Date(mail.date));
-                var element = '<div class="mail" id="mail-'+mail.mailid+'"><div class="mail-contents"><div class="mail-info"><span class="mail-sender">'+mail.sender+'</span><div class="mail-time">'+date+'</div></div><div class="mail-sub">'+ mail.subject +'</div> <div class="mail-text"><p>'+mail.message+'</p></div> </div></div>';
+                var date = new Date(mail.date);
+                var DateString = date.getDate()+" "+MonthFormatting[date.getMonth()]+" "+date.getFullYear()+" "+date.getHours()+":"+date.getMinutes();
+                var element = '<div class="mail" id="mail-'+mail.mailid+'"><span class="mail-sender" style="font-weight: bold;">'+mail.sender+'</span> <div class="mail-text"><p>'+mail.message+'</p></div> <div class="mail-time">'+DateString+'</div></div>';
 
                 $(".mail-list").append(element);
                 $("#mail-"+mail.mailid).data('MailData', mail);
@@ -94,7 +96,7 @@ var MonthFormatting = ["January", "February", "March", "April", "May", "June", "
 
 QB.Phone.Functions.SetupMail = function(MailData) {
     var date = new Date(MailData.date);
-    var DateString = date.getDay()+" "+MonthFormatting[date.getMonth()]+" "+date.getFullYear()+" "+date.getHours()+":"+date.getMinutes();
+    var DateString = date.getDate()+" "+MonthFormatting[date.getMonth()]+" "+date.getFullYear()+" "+date.getHours()+":"+date.getMinutes();
     $(".mail-subject").html("<p><span style='font-weight: bold;'>"+MailData.sender+"</span><br>"+MailData.subject+"</p>");
     $(".mail-date").html("<p>"+DateString+"</p>");
     $(".mail-content").html("<p>"+MailData.message+"</p>");

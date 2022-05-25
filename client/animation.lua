@@ -1,5 +1,5 @@
 local phoneProp = 0
-local phoneModel = `prop_npc_phone_02`
+local phoneModel = `prop_amb_phone`
 
 local function LoadAnimation(dict)
 	RequestAnimDict(dict)

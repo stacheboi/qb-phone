@@ -1,4 +1,5 @@
 local QBCore = exports['qb-core']:GetCoreObject()
+local requiredItems = {}
 hasHackedPhone = false
 
 CreateThread(function()
@@ -138,7 +139,7 @@ RegisterNetEvent('qb-phone:client:openChannelHackedMenu', function()
 end)
 
 RegisterNetEvent('qb-phone:client:TriggerPhoneHack', function(src)
-    QBCore.Functions.Progressbar("hack_gate", "Plugging in the usb...", math.random(5000, 10000), false, true, {
+    QBCore.Functions.Progressbar("hack_gate", "Plugging in the USB...", math.random(5000, 10000), false, true, {
         disableMovement = false,
         disableCarMovement = false,
         disableMouse = false,
@@ -148,18 +149,19 @@ RegisterNetEvent('qb-phone:client:TriggerPhoneHack', function(src)
         anim = "base",
     }, {}, {}, function() -- Done
         StopAnimTask(PlayerPedId(), "missheistdockssetup1clipboard@base", "base", 1.0)
-
-        local hack = exports['cd_terminalhacker']:StartTerminalHacking()
-        if hack.success then
-            TriggerServerEvent("QBCore:Server:RemoveItem", "phone_dongle", 1)
-            TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["phone_dongle"], "remove")
-            TriggerServerEvent('qb-phone:server:HackPhone', PhoneData.PlayerData.source)
-        else
-            QBCore.Functions.Notify("You have failed to hack your phone.", PhoneData.PlayerData.source, "error")
-            TriggerServerEvent("QBCore:Server:RemoveItem", "phone_dongle", 1)
-            TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["phone_dongle"], "remove")
-        end
+        TriggerEvent("DimboPassHack:StartHack", 2, function(passed)
+            if passed then
+                TriggerServerEvent("QBCore:Server:RemoveItem", "phone_dongle", 1)
+                TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["phone_dongle"], "remove")
+                TriggerServerEvent('qb-phone:server:HackPhone', PhoneData.PlayerData.source)
+            else
+                QBCore.Functions.Notify("You have failed to hack your phone.", PhoneData.PlayerData.source, "error")
+                TriggerServerEvent("QBCore:Server:RemoveItem", "phone_dongle", 1)
+                TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["phone_dongle"], "remove")
+            end
+        end)
     end, function() -- Cancel
         StopAnimTask(PlayerPedId(), "missheistdockssetup1clipboard@base", "base", 1.0)
     end)
 end)
+

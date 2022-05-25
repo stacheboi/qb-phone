@@ -2,16 +2,14 @@ Config = Config or {}
 Config.BillingCommissions = { -- This is a percentage (0.10) == 10%
     mechanic = 0.10
 }
-
---------------------------------
-Config.ChatSeller = 'csb_sol'
-Config.SellerLocation = vector4(348.04, -907.2, 28.25, 314.08)
-Config.PhoneHackItem = 'phone_dongle'
---------------------------------
-
+Config.Linux = false -- True if linux
+Config.TweetDuration = 12 -- How many hours to load tweets (12 will load the past 12 hours of tweets)
 Config.RepeatTimeout = 2000
 Config.CallRepeats = 10
 Config.OpenPhone = 244
+Config.ChatSeller = 'csb_sol'
+Config.SellerLocation = vector4(1132.51, -474.29, 65.71, 345.74)
+Config.PhoneHackItem = 'phone_dongle'
 Config.PhoneApplications = {
     ["phone"] = {
         app = "phone",
@@ -99,11 +97,11 @@ Config.PhoneApplications = {
         slot = 8,
         Alerts = 0,
     },
-    ["racing"] = {
-        app = "racing",
-        color = "#353b48",
-        icon = "fas fa-flag-checkered",
-        tooltipText = "Racing",
+    ["crypto"] = {
+        app = "crypto",
+        color = "#004682",
+        icon = "fas fa-coins",
+        tooltipText = "Crypto",
         job = false,
         blockedjobs = {},
         slot = 9,
@@ -116,7 +114,17 @@ Config.PhoneApplications = {
         tooltipText = "Houses",
         job = false,
         blockedjobs = {},
-        slot = 9,
+        slot = 10,
+        Alerts = 0,
+    },
+    ["meos"] = {
+        app = "meos",
+        color = "#004682",
+        icon = "fas fa-ad",
+        tooltipText = "MDT",
+        job = "police",
+        blockedjobs = {},
+        slot = 16,
         Alerts = 0,
     },
     ["lawyers"] = {
@@ -124,17 +132,6 @@ Config.PhoneApplications = {
         color = "#26d4ce",
         icon = "fas fa-briefcase",
         tooltipText = "Services",
-        tooltipPos = "bottom",
-        job = false,
-        blockedjobs = {},
-        slot = 10,
-        Alerts = 0,
-    },
-    ["group-chats"] = {
-        app = "group-chats",
-        color = "rgb(77 77 78)",
-        icon = "fas fa-comment-dots",
-        tooltipText = "Discordia",
         tooltipPos = "bottom",
         job = false,
         blockedjobs = {},
@@ -163,12 +160,13 @@ Config.PhoneApplications = {
         slot = 13,
         Alerts = 0,
     },
-    ["meos"] = {
-        app = "meos",
-        color = "#004682",
-        icon = "fas fa-ad",
-        tooltipText = "MDT",
-        job = "police",
+    ["group-chats"] = {
+        app = "group-chats",
+        color = "rgb(77 77 78)",
+        icon = "fas fa-comment-dots",
+        tooltipText = "Discordia",
+        tooltipPos = "bottom",
+        job = false,
         blockedjobs = {},
         slot = 14,
         Alerts = 0,
@@ -186,10 +184,20 @@ Config.StoreApps = {
         style = "";
         job = false,
         blockedjobs = {},
-        slot = 14,
+        slot = 17,
         Alerts = 0,
         password = true,
         creator = "QBCore",
         title = "Territory",
+    },
+    ["racing"] = {
+        app = "racing",
+        color = "#353b48",
+        icon = "fas fa-flag-checkered",
+        tooltipText = "Racing",
+        job = false,
+        blockedjobs = {},
+        slot = 15,
+        Alerts = 0,
     },
 }
